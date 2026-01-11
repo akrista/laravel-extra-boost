@@ -43,6 +43,7 @@ final class UpdateCommand extends Command
             if (!$env instanceof CodeEnvironment) {
                 continue;
             }
+
             if (! ($env instanceof HasCustomFrontmatter)) {
                 continue;
             }

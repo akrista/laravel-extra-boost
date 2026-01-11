@@ -29,14 +29,4 @@ return RectorConfig::configure()
         earlyReturn: true,
     )
     ->withParallel(timeoutSeconds: 60)
-    ->withPhpSets()
-    // Additional PHP level sets for modernization
-    ->withSets([
-        Rector\Set\ValueObject\LevelSetList::UP_TO_PHP_81,
-        Rector\Set\ValueObject\SetList::CODE_QUALITY,
-        Rector\Set\ValueObject\SetList::DEAD_CODE,
-        Rector\Set\ValueObject\SetList::CODING_STYLE,
-        Rector\Set\ValueObject\SetList::TYPE_DECLARATION,
-        Rector\Set\ValueObject\SetList::PRIVATIZATION,
-        Rector\Set\ValueObject\SetList::EARLY_RETURN,
-    ]);
+    ->withPhpSets();

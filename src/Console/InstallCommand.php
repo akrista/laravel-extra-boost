@@ -54,6 +54,7 @@ final class InstallCommand extends Command
             if (! $env instanceof CodeEnvironment) {
                 continue;
             }
+
             if (! ($env instanceof HasCustomFrontmatter)) {
                 continue;
             }
@@ -77,7 +78,7 @@ final class InstallCommand extends Command
                 $newContent = preg_replace('/^---\s*\n.*?\n---\s*\n/s', $correctFrontmatter, $content, 1);
                 File::put($filePath, $newContent);
             } else {
-                File::put($filePath, $correctFrontmatter.$content);
+                File::put($filePath, $correctFrontmatter . $content);
             }
         }
     }
