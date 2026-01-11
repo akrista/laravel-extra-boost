@@ -12,7 +12,7 @@ use Laravel\Boost\Support\Config;
 
 final class InstallCommand extends Command
 {
-    protected $signature = 'boost:install-extra {--ignore-guidelines : Skip installing AI guidelines} {--ignore-mcp : Skip installing MCP server configuration}';
+    protected $signature = 'extra-boost:install {--ignore-guidelines : Skip installing AI guidelines} {--ignore-mcp : Skip installing MCP server configuration}';
 
     protected $description = 'Install Laravel Boost and fix frontmatter for Windsurf and Antigravity';
 
@@ -40,7 +40,7 @@ final class InstallCommand extends Command
     {
         $this->newLine();
 
-        $config = new Config();
+        $config = new Config;
         $selectedAgents = $config->getAgents();
 
         $environments = ['windsurf', 'antigravity'];
@@ -51,7 +51,7 @@ final class InstallCommand extends Command
             }
 
             $env = CodeEnvironment::fromName($envName);
-            if (!$env instanceof CodeEnvironment) {
+            if (! $env instanceof CodeEnvironment) {
                 continue;
             }
             if (! ($env instanceof HasCustomFrontmatter)) {
@@ -77,7 +77,7 @@ final class InstallCommand extends Command
                 $newContent = preg_replace('/^---\s*\n.*?\n---\s*\n/s', $correctFrontmatter, $content, 1);
                 File::put($filePath, $newContent);
             } else {
-                File::put($filePath, $correctFrontmatter . $content);
+                File::put($filePath, $correctFrontmatter.$content);
             }
         }
     }

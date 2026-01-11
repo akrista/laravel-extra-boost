@@ -12,7 +12,7 @@ use Laravel\Boost\Support\Config;
 
 final class UpdateCommand extends Command
 {
-    protected $signature = 'boost:update-extra';
+    protected $signature = 'extra-boost:update';
 
     protected $description = 'Update Laravel Boost guidelines and fix frontmatter for Windsurf and Antigravity';
 
