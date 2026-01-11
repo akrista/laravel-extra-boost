@@ -1,53 +1,61 @@
 {
-    "name": "gonetone/laravel-boost-windsurf-extension",
-    "description": "Laravel Boost extension package that provides Windsurf editor and Windsurf JetBrains plugin integration.",
+    "$schema": "https://getcomposer.org/schema.json",
+    "name": "akrista/laravel-extra-boost",
+    "version": "1.0.0",
+    "description": "Laravel Boost extension package that provides integration for .",
     "keywords": [
         "laravel",
         "boost",
         "ai",
         "development",
         "dev",
+        "antigravity",
         "windsurf",
         "jetbrains",
         "phpstorm",
         "editor",
         "ide"
     ],
-    "type": "library",
     "license": "MIT",
+    "type": "library",
     "authors": [
         {
-            "name": "GoneTone",
-            "homepage": "https://github.com/GoneTone"
+            "name": "Jorge Thomas (akrista)",
+            "role": "Developer",
+            "email": "info@notakrista.com",
+            "homepage": "https://github.com/akrista/laravel-extra-boost"
         }
     ],
     "support": {
-        "issues": "https://github.com/GoneTone/laravel-boost-windsurf-extension/issues",
-        "source": "https://github.com/GoneTone/laravel-boost-windsurf-extension"
+        "issues": "https://github.com/akrista/laravel-extra-boost/issues",
+        "source": "https://github.com/akrista/laravel-extra-boost"
     },
     "require": {
         "php": "^8.1",
-        "illuminate/support": "^10.49.0|^11.45.3|^12.28.1",
+        "illuminate/support": "^10.49.0|^11.45.3|^12.41.1",
         "laravel/boost": "^1.4"
     },
     "require-dev": {
-        "laravel/pint": "1.20"
+        "laravel/pint": "^1.27.0",
+        "rector/rector": "^2.3.0"
     },
     "autoload": {
         "psr-4": {
-            "GoneTone\\LaravelBoostWindsurf\\": "src/"
+            "Akrista\\LaravelExtraBoost\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "GoneTone\\LaravelBoostWindsurf\\WindsurfServiceProvider"
+                "Akrista\\LaravelExtraBoost\\ExtraBoostServiceProvider"
             ]
         }
     },
     "scripts": {
-        "pint": "vendor/bin/pint",
-        "pint-test": "vendor/bin/pint --test"
+        "format": ["pint --ansi"],
+        "lint": [
+            "rector"
+        ]
     },
     "config": {
         "optimize-autoloader": true,
