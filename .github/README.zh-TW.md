@@ -4,11 +4,15 @@
 <a href="https://packagist.org/packages/akrista/laravel-extra-boost"><img src="https://img.shields.io/packagist/v/akrista/laravel-extra-boost" alt="最新穩定版本"></a>
 <a href="https://packagist.org/packages/akrista/laravel-extra-boost"><img src="https://img.shields.io/packagist/l/akrista/laravel-extra-boost" alt="授權條款"></a>
 
-[English](README) | 繁體中文 | [简体中文](README.zh-CN.md) | [Español](README.es-VE.md)
+[English](README.md) | [Español](README.es-VE.md) | [简体中文](README.zh-CN.md) | 繁體中文
 
 ## 簡介
 
 Laravel Extra Boost 是原始 [gonetone/laravel-boost-windsurf-extension](https://packagist.org/packages/gonetone/laravel-boost-windsurf-extension) 套件的分支。它是 [Laravel Boost](https://github.com/laravel/boost) 的擴充套件，為包括 [Windsurf](https://windsurf.com/) 和 [Antigravity](https://antigravity.dev/) 在內的額外 AI 驅動開發環境提供整合支援。此套件透過新增對這些現代 AI 程式設計助手的支援來增強 Laravel Boost，並提供自訂指令來管理指南檔案中的前置內容。
+
+### 關於此實作
+
+此套件遵循我的個人工作流程方法。不使用 `.windsurfrules` 檔案，而是使用 `.windsurf/rules/laravel-boost.md` 目錄結構。同樣地，不是為 Windsurf 和 Windsurf JetBrains 外掛程式提供單獨的選項，而是在建立 Windsurf MCP 設定時，同時在 `.codeium` 和 `.codeium/windsurf` 目錄中建立，以確保與兩種設定的相容性。
 
 ## 特性
 

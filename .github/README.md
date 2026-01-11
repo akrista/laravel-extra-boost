@@ -4,11 +4,15 @@
 <a href="https://packagist.org/packages/akrista/laravel-extra-boost"><img src="https://img.shields.io/packagist/v/akrista/laravel-extra-boost" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/akrista/laravel-extra-boost"><img src="https://img.shields.io/packagist/l/akrista/laravel-extra-boost" alt="License"></a>
 
-English | [繁體中文](README.zh-TW.md) | [简体中文](README.zh-CN.md) | [Español](README.es-VE.md)
+English | [Español](README.es-VE.md) | [繁體中文](README.zh-TW.md) | [简体中文](README.zh-CN.md)
 
 ## Introduction
 
 Laravel Extra Boost is a fork of the original [gonetone/laravel-boost-windsurf-extension](https://packagist.org/packages/gonetone/laravel-boost-windsurf-extension) package. It's an extension package for [Laravel Boost](https://github.com/laravel/boost) that provides integration for additional AI-powered development environments including [Windsurf](https://windsurf.com/) and [Antigravity](https://antigravity.dev/). This package enhances Laravel Boost by adding support for these modern AI coding assistants and provides custom commands to manage frontmatter in guideline files.
+
+### About This Implementation
+
+This package follows my personal workflow methodology. Instead of using the `.windsurfrules` file, it uses the `.windsurf/rules/laravel-boost.md` directory structure. Similarly, rather than having separate options for Windsurf and Windsurf JetBrains plugins, when creating the Windsurf MCP configuration, it creates it in both `.codeium` and `.codeium/windsurf` directories to ensure compatibility with both setups.
 
 ## Features
 
