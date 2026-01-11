@@ -1,0 +1,23 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "composer",
+			"command": "run-script",
+			"args": ["format"],
+			"group": "build",
+			"problemMatcher": [],
+			"label": "composer: format",
+			"detail": "Format code with Laravel Pint"
+		},
+		{
+			"type": "composer",
+			"command": "run-script",
+			"args": ["lint"],
+			"group": "build",
+			"problemMatcher": [],
+			"label": "composer: lint",
+			"detail": "Run Rector for code linting"
+		}
+	]
+}
