@@ -1,7 +1,7 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
     "name": "akrista/laravel-extra-boost",
-    "version": "1.2.1",
+    "version": "1.2.0",
     "description": "Laravel Boost extension package that provides plugin integration to Windsurf and Antigravity",
     "keywords": [
         "laravel",
