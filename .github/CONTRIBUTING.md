@@ -1,7 +1,3 @@
----
-title: Contributing
----
-
 > Parts of this guide are taken from [converge's contribution guide](https://github.com/convergephp/documentations/blob/master/v1/framework/07-contributing.md), and it served as very useful inspiration.
 
 ## Reporting bugs
