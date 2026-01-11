@@ -4,7 +4,7 @@
 <a href="https://packagist.org/packages/akrista/laravel-extra-boost"><img src="https://img.shields.io/packagist/v/akrista/laravel-extra-boost" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/akrista/laravel-extra-boost"><img src="https://img.shields.io/packagist/l/akrista/laravel-extra-boost" alt="License"></a>
 
-English | [Español](README.es-VE.md) | [繁體中文](README.zh-TW.md) | [简体中文](README.zh-CN.md)
+English | [Español](README.es-VE.md)
 
 ## Introduction
 
@@ -26,7 +26,6 @@ This package follows my personal workflow methodology. Instead of using the `.wi
 
 - PHP 8.1 or higher
 - Laravel 10.49.0, 11.45.3, or 12.41.1 and higher
-- Laravel Boost 1.4 or higher
 - [Windsurf Editor](https://windsurf.com/editor) or [Windsurf JetBrains Plugin](https://plugins.jetbrains.com/plugin/20540-windsurf-plugin-formerly-codeium-for-python-js-java-go--) (for Windsurf support)
 - [Antigravity](https://antigravity.dev/) (for Antigravity support)
 
