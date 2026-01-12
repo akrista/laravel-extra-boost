@@ -20,7 +20,7 @@ This package follows my personal workflow methodology. Instead of using the `.wi
 - **Antigravity Integration**: Complete support for Antigravity AI development environment
 - **Custom Frontmatter Management**: Automatically fixes frontmatter in guideline files for supported environments
 - **MCP Server Configuration**: Configures Model Context Protocol (MCP) servers for supported environments
-- **Enhanced Commands**: Provides `boost:install-extra` and `boost:update-extra` commands
+- **Enhanced Commands**: Provides `extra-boost:install` and `extra-boost:update` commands
 
 ## Requirements
 
@@ -44,7 +44,7 @@ composer require akrista/laravel-extra-boost --dev
 Run the enhanced install command to install Laravel Boost with support for Windsurf and Antigravity:
 
 ```bash
-php artisan boost:install-extra
+php artisan extra-boost:install
 ```
 
 This command will:
@@ -63,13 +63,13 @@ You can skip specific features during installation:
 
 ```bash
 # Skip installing AI guidelines
-php artisan boost:install-extra --ignore-guidelines
+php artisan extra-boost:install --ignore-guidelines
 
 # Skip installing MCP server configuration
-php artisan boost:install-extra --ignore-mcp
+php artisan extra-boost:install --ignore-mcp
 
 # Skip both
-php artisan boost:install-extra --ignore-guidelines --ignore-mcp
+php artisan extra-boost:install --ignore-guidelines --ignore-mcp
 ```
 
 ## Usage
@@ -79,7 +79,7 @@ php artisan boost:install-extra --ignore-guidelines --ignore-mcp
 To update Laravel Boost guidelines and fix frontmatter for supported environments:
 
 ```bash
-php artisan boost:update-extra
+php artisan extra-boost:update
 ```
 
 ### Switching Between Projects
@@ -87,7 +87,7 @@ php artisan boost:update-extra
 Since Windsurf and Antigravity use global-level MCP configuration files, you need to run the following command when switching between different Laravel projects:
 
 ```bash
-php artisan boost:install-extra --no-interaction
+php artisan extra-boost:install --no-interaction
 ```
 
 This ensures that the MCP configuration points to the correct path for the current project.

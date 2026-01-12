@@ -20,7 +20,7 @@ Este paquete sigue mi metodología de trabajo personal. En lugar de usar el arch
 - **Integración con Antigravity**: Soporte completo para el entorno de desarrollo con IA Antigravity
 - **Gestión de Frontmatter Personalizado**: Corrige automáticamente el frontmatter en archivos de guías para entornos soportados
 - **Configuración de Servidor MCP**: Configura servidores de Protocolo de Contexto de Modelo (MCP) para entornos soportados
-- **Comandos Mejorados**: Proporciona los comandos `boost:install-extra` y `boost:update-extra`
+- **Comandos Mejorados**: Proporciona los comandos `extra-boost:install` y `extra-boost:update`
 
 ## Requisitos
 
@@ -44,7 +44,7 @@ composer require akrista/laravel-extra-boost --dev
 Ejecuta el comando de instalación mejorado para instalar Laravel Boost con soporte para Windsurf y Antigravity:
 
 ```bash
-php artisan boost:install-extra
+php artisan extra-boost:install
 ```
 
 Este comando:
@@ -63,13 +63,13 @@ Puedes omitir características específicas durante la instalación:
 
 ```bash
 # Omitir la instalación de guías de IA
-php artisan boost:install-extra --ignore-guidelines
+php artisan extra-boost:install --ignore-guidelines
 
 # Omitir la instalación de la configuración del servidor MCP
-php artisan boost:install-extra --ignore-mcp
+php artisan extra-boost:install --ignore-mcp
 
 # Omitir ambos
-php artisan boost:install-extra --ignore-guidelines --ignore-mcp
+php artisan extra-boost:install --ignore-guidelines --ignore-mcp
 ```
 
 ## Uso
@@ -79,7 +79,7 @@ php artisan boost:install-extra --ignore-guidelines --ignore-mcp
 Para actualizar las guías de Laravel Boost y corregir el frontmatter para entornos soportados:
 
 ```bash
-php artisan boost:update-extra
+php artisan extra-boost:update
 ```
 
 ### Cambiar entre Proyectos
@@ -87,7 +87,7 @@ php artisan boost:update-extra
 Dado que Windsurf y Antigravity usan archivos de configuración MCP a nivel global, necesitas ejecutar el siguiente comando al cambiar entre diferentes proyectos de Laravel:
 
 ```bash
-php artisan boost:install-extra --no-interaction
+php artisan extra-boost:install --no-interaction
 ```
 
 Esto asegura que la configuración MCP apunte a la ruta correcta para el proyecto actual.
