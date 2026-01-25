@@ -6,6 +6,13 @@
 
 [English](README.md) | Español 
 
+## Compatibilidad de Versiones
+
+⚠️ **Aviso Importante**: Este paquete tiene diferentes versiones para diferentes versiones de Laravel Boost:
+
+- **Versión 1.x**: Compatible con Laravel Boost 1.x (estable)
+- **Versión 2.x (Beta)**: Compatible con Laravel Boost 2.x (desarrollo)
+
 ## Introducción
 
 Laravel Extra Boost es un fork del paquete original [gonetone/laravel-boost-windsurf-extension](https://packagist.org/packages/gonetone/laravel-boost-windsurf-extension). Es un paquete de extensión para [Laravel Boost](https://github.com/laravel/boost) que proporciona integración para entornos de desarrollo adicionales con IA incluyendo [Windsurf](https://windsurf.com/) y [Antigravity](https://antigravity.dev/). Este paquete mejora Laravel Boost añadiendo soporte para estos asistentes de codificación con IA modernos y proporciona comandos personalizados para gestionar el frontmatter en archivos de guías.
@@ -20,23 +27,48 @@ Este paquete sigue mi metodología de trabajo personal. En lugar de usar el arch
 - **Integración con Antigravity**: Soporte completo para el entorno de desarrollo con IA Antigravity
 - **Gestión de Frontmatter Personalizado**: Corrige automáticamente el frontmatter en archivos de guías para entornos soportados
 - **Configuración de Servidor MCP**: Configura servidores de Protocolo de Contexto de Modelo (MCP) para entornos soportados
+- **Soporte de Skills**: (v2.x) Soporte para skills de agentes de IA con directorios dedicados
 - **Comandos Mejorados**: Proporciona los comandos `extra-boost:install` y `extra-boost:update`
+- **Arquitectura de Agentes**: (v2.x) Construido sobre el nuevo sistema de Agentes para mejor extensibilidad
 
 ## Requisitos
 
+### Para Versión 1.x (Laravel Boost 1.x)
 - PHP 8.1 o superior
 - Laravel 10.49.0, 11.45.3, o 12.41.1 y superior
+- Laravel Boost 1.x
+
+### Para Versión 2.x Beta (Laravel Boost 2.x)
+- PHP 8.2 o superior
+- Laravel 11.45.3 o 12.41.1 y superior
+- Laravel Boost 2.x (dev-main)
+
+### Requisitos Comunes
 - [Editor Windsurf](https://windsurf.com/editor) o [Plugin Windsurf para JetBrains](https://plugins.jetbrains.com/plugin/20540-windsurf-plugin-formerly-codeium-for-python-js-java-go--) (para soporte de Windsurf)
 - [Antigravity](https://antigravity.dev/) (para soporte de Antigravity)
 
 ## Instalación
 
-### Paso 1: Instalar el Paquete
+### Opción A: Para Laravel Boost 1.x (Estable)
 
-Instala el paquete vía Composer como una dependencia de desarrollo:
+Instala la versión estable:
 
 ```bash
 composer require akrista/laravel-extra-boost --dev
+```
+
+### Opción B: Para Laravel Boost 2.x (Beta)
+
+Instala la versión beta:
+
+```bash
+composer require akrista/laravel-extra-boost:2.0.*@beta --dev
+```
+
+O para desarrollo:
+
+```bash
+composer require akrista/laravel-extra-boost:dev-main --dev
 ```
 
 ### Paso 2: Instalar Laravel Boost
@@ -96,11 +128,39 @@ Esto asegura que la configuración MCP apunte a la ruta correcta para el proyect
 
 Después de la instalación, el paquete automáticamente:
 
-1. Registrará los entornos Windsurf y Antigravity con Laravel Boost
+1. Registrará los agentes Windsurf y Antigravity con Laravel Boost
 2. Configurará servidores MCP para entornos soportados
 3. Creará o actualizará archivos de guías con el frontmatter adecuado:
    - `.windsurf/rules/laravel-boost.md` para Windsurf
    - `.agent/rules/laravel-boost.md` para Antigravity
+4. (v2.x) Creará directorios de skills:
+   - `.windsurf/skills/` para skills de IA de Windsurf
+   - `.agent/skills/` para skills de IA de Antigravity
+
+## Guía de Migración
+
+### Actualizar de 1.x a 2.x
+
+Si estás actualizando de Laravel Extra Boost 1.x a 2.x beta:
+
+1. Asegúrate de estar usando Laravel Boost 2.x (dev-main)
+2. Actualiza tu composer.json:
+   ```json
+   {
+       "require": {
+           "akrista/laravel-extra-boost": "^2.0@beta"
+       }
+   }
+   ```
+3. Ejecuta `composer update`
+4. El paquete usará automáticamente la nueva arquitectura de Boost 2.x
+
+### Cambios Rotos en 2.x
+
+- La arquitectura migró de CodeEnvironment al sistema de Agentes
+- Contratos actualizados: SupportsGuidelines, SupportsMcp, SupportsSkills
+- Namespace cambiado de `CodeEnvironment` a `Agents`
+- Versión mínima de PHP aumentada a 8.2
 
 ## Licencia
 

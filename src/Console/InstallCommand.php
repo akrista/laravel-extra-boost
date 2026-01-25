@@ -7,7 +7,7 @@ namespace Akrista\LaravelExtraBoost\Console;
 use Akrista\LaravelExtraBoost\Contracts\HasCustomFrontmatter;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
-use Laravel\Boost\Install\CodeEnvironment\CodeEnvironment;
+use Laravel\Boost\Install\Agents\Agent;
 use Laravel\Boost\Support\Config;
 
 final class InstallCommand extends Command
@@ -50,8 +50,8 @@ final class InstallCommand extends Command
                 continue;
             }
 
-            $env = CodeEnvironment::fromName($envName);
-            if (! $env instanceof CodeEnvironment) {
+            $env = Agent::fromName($envName);
+            if (! $env instanceof Agent) {
                 continue;
             }
 

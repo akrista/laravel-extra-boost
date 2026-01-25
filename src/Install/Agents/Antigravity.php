@@ -2,15 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Akrista\LaravelExtraBoost\Install\CodeEnvironment;
+namespace Akrista\LaravelExtraBoost\Install\Agents;
 
 use Akrista\LaravelExtraBoost\Contracts\HasCustomFrontmatter;
-use Laravel\Boost\Contracts\Agent;
-use Laravel\Boost\Contracts\McpClient;
-use Laravel\Boost\Install\CodeEnvironment\CodeEnvironment;
+use Laravel\Boost\Contracts\SupportsGuidelines;
+use Laravel\Boost\Contracts\SupportsMcp;
+use Laravel\Boost\Contracts\SupportsSkills;
+use Laravel\Boost\Install\Agents\Agent;
 use Laravel\Boost\Install\Enums\Platform;
 
-final class Antigravity extends CodeEnvironment implements Agent, HasCustomFrontmatter, McpClient
+final class Antigravity extends Agent implements HasCustomFrontmatter, SupportsGuidelines, SupportsMcp, SupportsSkills
 {
     public bool $useAbsolutePathForMcp = true;
 
@@ -78,5 +79,10 @@ final class Antigravity extends CodeEnvironment implements Agent, HasCustomFront
     public function getFrontmatterContent(): string
     {
         return "---\ntrigger: always_on\nglob:\ndescription: Laravel Boost development guidelines for this project\n---\n";
+    }
+
+    public function skillsPath(): string
+    {
+        return '.agent/skills';
     }
 }

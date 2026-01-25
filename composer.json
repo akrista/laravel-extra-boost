@@ -1,7 +1,8 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
     "name": "akrista/laravel-extra-boost",
-    "description": "Laravel Boost extension package that provides plugin integration to Windsurf and Antigravity",
+    "version": "2.0.0-beta.1",
+"description": "Laravel Boost extension package that provides plugin integration to Windsurf and Antigravity",
     "keywords": [
         "laravel",
         "boost",
@@ -29,14 +30,20 @@
         "issues": "https://github.com/akrista/laravel-extra-boost/issues",
         "source": "https://github.com/akrista/laravel-extra-boost"
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/laravel/boost.git"
+        }
+    ],
     "require": {
-        "php": "^8.1",
-        "illuminate/support": "^10.49.0|^11.45.3|^12.41.1",
-        "laravel/boost": "^1.8.1"
+        "php": "^8.2",
+        "illuminate/support": "^11.45.3|^12.41.1",
+        "laravel/boost": "dev-main"
     },
     "require-dev": {
-        "laravel/pint": "^1.20.0|^1.27.0",
-        "rector/rector": "^2.3.0"
+        "laravel/pint": "^1.27.0",
+        "rector/rector": "^2.1"
     },
     "autoload": {
         "psr-4": {
@@ -44,6 +51,9 @@
         }
     },
     "extra": {
+        "branch-alias": {
+            "dev-main": "2.0.x-dev"
+        },
         "laravel": {
             "providers": [
                 "Akrista\\LaravelExtraBoost\\ExtraBoostServiceProvider"
@@ -51,8 +61,8 @@
         }
     },
     "scripts": {
-        "format": ["pint --ansi"],
-        "lint": [
+        "lint": ["pint --parallel"],
+        "refactor": [
             "rector"
         ]
     },
@@ -62,5 +72,5 @@
         "sort-packages": true
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": false
 }
