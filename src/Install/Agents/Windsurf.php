@@ -13,7 +13,10 @@ use Laravel\Boost\Install\Enums\Platform;
 
 final class Windsurf extends Agent implements HasCustomFrontmatter, SupportsGuidelines, SupportsMcp, SupportsSkills
 {
-    public bool $useAbsolutePathForMcp = true;
+    public function useAbsolutePathForMcp(): bool
+    {
+        return true;
+    }
 
     public function name(): string
     {
@@ -125,7 +128,10 @@ final class Windsurf extends Agent implements HasCustomFrontmatter, SupportsGuid
                 $config['mcpServers'] = [];
             }
 
-            $config['mcpServers'][$key] = $this->mcpServerConfig($command, $args, $env);
+            $config['mcpServers'][$key] = [
+                'command' => $command,
+                'args' => $args,
+            ];
 
             file_put_contents($path, json_encode($config, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
 

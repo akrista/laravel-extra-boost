@@ -13,7 +13,10 @@ use Laravel\Boost\Install\Enums\Platform;
 
 final class Antigravity extends Agent implements HasCustomFrontmatter, SupportsGuidelines, SupportsMcp, SupportsSkills
 {
-    public bool $useAbsolutePathForMcp = true;
+    public function useAbsolutePathForMcp(): bool
+    {
+        return true;
+    }
 
     public function name(): string
     {
