@@ -10,8 +10,8 @@ English | [Español](README.es-VE.md)
 
 ⚠️ **Important Notice**: This package has different versions for different Laravel Boost versions:
 
-- **Version 1.x**: Compatible with Laravel Boost 1.x (stable)
-- **Version 2.x (Beta)**: Compatible with Laravel Boost 2.x (development)
+- **Version 1.x**: Compatible with Laravel Boost 1.x (legacy)
+- **Version 2.x**: Compatible with Laravel Boost 2.x (current stable)
 
 ## Introduction
 
@@ -27,9 +27,9 @@ This package follows my personal workflow methodology. Instead of using the `.wi
 - **Antigravity Integration**: Complete support for Antigravity AI development environment
 - **Custom Frontmatter Management**: Automatically fixes frontmatter in guideline files for supported environments
 - **MCP Server Configuration**: Configures Model Context Protocol (MCP) servers for supported environments
-- **Skills Support**: (v2.x) Support for AI agent skills with dedicated skills directories
+- **Skills Support**: Support for AI agent skills with dedicated skills directories
 - **Enhanced Commands**: Provides `extra-boost:install` and `extra-boost:update` commands
-- **Agent Architecture**: (v2.x) Built on the new Agent system for better extensibility
+- **Agent Architecture**: Built on the new Agent system for better extensibility
 
 ## Requirements
 
@@ -38,10 +38,10 @@ This package follows my personal workflow methodology. Instead of using the `.wi
 - Laravel 10.49.0, 11.45.3, or 12.41.1 and higher
 - Laravel Boost 1.x
 
-### For Version 2.x Beta (Laravel Boost 2.x)
+### For Version 2.x (Laravel Boost 2.x)
 - PHP 8.2 or higher
 - Laravel 11.45.3 or 12.41.1 and higher
-- Laravel Boost 2.x (dev-main)
+- Laravel Boost 2.0.0 or higher
 
 ### Common Requirements
 - [Windsurf Editor](https://windsurf.com/editor) or [Windsurf JetBrains Plugin](https://plugins.jetbrains.com/plugin/20540-windsurf-plugin-formerly-codeium-for-python-js-java-go--) (for Windsurf support)
@@ -49,26 +49,20 @@ This package follows my personal workflow methodology. Instead of using the `.wi
 
 ## Installation
 
-### Option A: For Laravel Boost 1.x (Stable)
+### Option A: For Laravel Boost 1.x (Legacy)
 
-Install the stable version:
+Install the legacy version:
+
+```bash
+composer require akrista/laravel-extra-boost:^1.0 --dev
+```
+
+### Option B: For Laravel Boost 2.x (Current Stable)
+
+Install the current stable version:
 
 ```bash
 composer require akrista/laravel-extra-boost --dev
-```
-
-### Option B: For Laravel Boost 2.x (Beta)
-
-Install the beta version:
-
-```bash
-composer require akrista/laravel-extra-boost:2.0.*@beta --dev
-```
-
-Or for development:
-
-```bash
-composer require akrista/laravel-extra-boost:dev-main --dev
 ```
 
 ### Step 2: Install Laravel Boost
@@ -133,7 +127,7 @@ After installation, the package will automatically:
 3. Create or update guideline files with proper frontmatter:
    - `.windsurf/rules/laravel-boost.md` for Windsurf
    - `.agent/rules/laravel-boost.md` for Antigravity
-4. (v2.x) Create skills directories:
+4. Create skills directories:
    - `.windsurf/skills/` for Windsurf AI skills
    - `.agent/skills/` for Antigravity AI skills
 
@@ -141,14 +135,14 @@ After installation, the package will automatically:
 
 ### Upgrading from 1.x to 2.x
 
-If you're upgrading from Laravel Extra Boost 1.x to 2.x beta:
+If you're upgrading from Laravel Extra Boost 1.x to 2.x:
 
-1. Ensure you're using Laravel Boost 2.x (dev-main)
+1. Ensure you're using Laravel Boost 2.0.0 or higher
 2. Update your composer.json:
    ```json
    {
        "require": {
-           "akrista/laravel-extra-boost": "^2.0@beta"
+           "akrista/laravel-extra-boost": "^2.0"
        }
    }
    ```
