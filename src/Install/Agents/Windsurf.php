@@ -114,17 +114,17 @@ final class Windsurf extends Agent implements HasCustomFrontmatter, SupportsGuid
         foreach ($mcpPaths as $path) {
             $dir = dirname($path);
 
-            if (! file_exists($dir)) {
+            if ( ! file_exists($dir)) {
                 continue;
             }
 
-            if (! file_exists($path)) {
+            if ( ! file_exists($path)) {
                 file_put_contents($path, json_encode(['mcpServers' => []], JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
             }
 
             $config = json_decode(file_get_contents($path), true);
 
-            if (! isset($config['mcpServers'])) {
+            if ( ! isset($config['mcpServers'])) {
                 $config['mcpServers'] = [];
             }
 

@@ -16,13 +16,14 @@
         "ide"
     ],
     "license": "MIT",
+    "homepage": "https://github.com/akrista/laravel-extra-boost",
     "type": "library",
     "authors": [
         {
             "name": "Jorge Thomas (akrista)",
             "role": "Developer",
             "email": "info@notakrista.com",
-            "homepage": "https://github.com/akrista/laravel-extra-boost"
+            "homepage": "https://github.com/akrista"
         }
     ],
     "support": {

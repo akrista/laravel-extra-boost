@@ -29,7 +29,7 @@ final class InstallCommand extends Command
 
         $exitCode = $this->call(\Laravel\Boost\Console\InstallCommand::class, $options);
 
-        if ($exitCode === 0) {
+        if (0 === $exitCode) {
             $this->fixFrontmatter();
         }
 
@@ -40,28 +40,28 @@ final class InstallCommand extends Command
     {
         $this->newLine();
 
-        $config = new Config;
+        $config = new Config();
         $selectedAgents = $config->getAgents();
 
         $environments = ['windsurf', 'antigravity'];
 
         foreach ($environments as $envName) {
-            if (! in_array($envName, $selectedAgents, true)) {
+            if ( ! in_array($envName, $selectedAgents, true)) {
                 continue;
             }
 
             $env = Agent::fromName($envName);
-            if (! $env instanceof Agent) {
+            if ( ! $env instanceof Agent) {
                 continue;
             }
 
-            if (! ($env instanceof HasCustomFrontmatter)) {
+            if ( ! ($env instanceof HasCustomFrontmatter)) {
                 continue;
             }
 
             $filePath = base_path($env->guidelinesPath());
 
-            if (! File::exists($filePath)) {
+            if ( ! File::exists($filePath)) {
                 continue;
             }
 

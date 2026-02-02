@@ -35,22 +35,22 @@ final class UpdateCommand extends Command
         $environments = ['windsurf', 'antigravity'];
 
         foreach ($environments as $envName) {
-            if (! in_array($envName, $selectedAgents, true)) {
+            if ( ! in_array($envName, $selectedAgents, true)) {
                 continue;
             }
 
             $env = Agent::fromName($envName);
-            if (!$env instanceof Agent) {
+            if ( ! $env instanceof Agent) {
                 continue;
             }
 
-            if (! ($env instanceof HasCustomFrontmatter)) {
+            if ( ! ($env instanceof HasCustomFrontmatter)) {
                 continue;
             }
 
             $filePath = base_path($env->guidelinesPath());
 
-            if (! File::exists($filePath)) {
+            if ( ! File::exists($filePath)) {
                 continue;
             }
 

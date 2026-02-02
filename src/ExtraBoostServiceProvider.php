@@ -13,10 +13,7 @@ use Laravel\Boost\Boost;
 
 final class ExtraBoostServiceProvider extends ServiceProvider
 {
-    public function register(): void
-    {
-        //
-    }
+    public function register(): void {}
 
     public function boot(): void
     {
